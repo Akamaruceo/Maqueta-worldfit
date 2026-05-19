@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>WorldFit Algarrobo | Gimnasio y Centro de Entrenamiento</title>
+  <meta name="description" content="Entrena en WorldFit Algarrobo. Fuerza, funcional, clases, spinning y entrenamiento personalizado en Los Pelícanos 2449. Consulta por WhatsApp.">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:title" content="WorldFit Algarrobo | Gimnasio y Centro de Entrenamiento">
+  <meta property="og:description" content="Entrena en WorldFit Algarrobo. Fuerza, funcional, clases y asesoría deportiva en Los Pelícanos 2449.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   TOKENS
+============================================================ */
+:root {
+  --black:    #050505;
+  --grafito:  #111111;
+  --grafito2: #181818;
+  --grafito3: #1f1f1f;
+  --border:   #262626;
+  --yellow:   #FFD400;
+  --yellow-h: #E6BE00;
+  --white:    #ffffff;
+  --grey:     #B8B8B8;
+  --grey-d:   #707070;
+  --wa:       #25D366;
+
+  --ff-h: 'Barlow Condensed', sans-serif;
+  --ff-b: 'Inter', sans-serif;
+
+  --tr: 0.22s ease;
+  --r:  4px;
+}
+
+/* ============================================================
+   RESET
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--ff-b);
+  background: var(--black); color: var(--white);
+  overflow-x: hidden; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { background: none; border: none; cursor: pointer; font: inherit; color: inherit; }
+ul { list-style: none; }
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+.sec  { padding: 80px 0; }
+
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--ff-h); font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--yellow); margin-bottom: 14px;
+}
+.eyebrow::before {
+  content: ''; width: 22px; height: 2px;
+  background: var(--yellow); display: block;
+}
+
+.h-1 {
+  font-family: var(--ff-h); font-weight: 900;
+  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  line-height: 0.92; letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.h-2 {
+  font-family: var(--ff-h); font-weight: 900;
+  font-size: clamp(1.9rem, 5.5vw, 3.4rem);
+  line-height: 1; letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+.h-3 {
+  font-family: var(--ff-h); font-weight: 800;
+  font-size: 1.35rem; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: 0.01em;
+}
+.yellow { color: var(--yellow); }
+.muted  { color: var(--grey); }
+.lead   { font-size: 1rem; color: var(--grey); line-height: 1.7; }
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  font-family: var(--ff-h); font-weight: 700;
+  font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 14px 26px; border-radius: var(--r);
+  border: 2px solid transparent;
+  cursor: pointer; transition: all var(--tr);
+  white-space: nowrap;
+}
+.btn-xl { padding: 17px 34px; font-size: 1.05rem; }
+.btn-sm { padding: 10px 18px; font-size: 0.8rem; }
+
+.btn-yellow { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+.btn-yellow:hover { background: var(--yellow-h); border-color: var(--yellow-h); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(255,212,0,0.3); }
+
+.btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.25); }
+.btn-ghost:hover { border-color: var(--yellow); color: var(--yellow); transform: translateY(-2px); }
+
+.btn-dark { background: var(--black); color: var(--white); border-color: var(--black); }
+.btn-dark:hover { background: var(--grafito); border-color: var(--grafito); transform: translateY(-2px); }
+
+.btn-wa { background: var(--wa); color: #fff; border-color: var(--wa); }
+.btn-wa:hover { background: #1ebe5c; border-color: #1ebe5c; transform: translateY(-2px); }
+
+.btn svg { width: 16px; height: 16px; }
+.btn-xl svg { width: 18px; height: 18px; }
+
+/* ============================================================
+   ICONS (SVG inline helpers)
+============================================================ */
+.ico {
+  width: 28px; height: 28px;
+  color: var(--yellow); flex-shrink: 0;
+  stroke-width: 1.8;
+}
+.ico-lg { width: 36px; height: 36px; }
+
+/* ============================================================
+   REVEAL
+============================================================ */
+.rv { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.rv.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+
+/* ============================================================
+   HEADER
+============================================================ */
+.hdr {
+  position: sticky; top: 0; z-index: 900;
+  background: rgba(5,5,5,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow var(--tr);
+}
+.hdr.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
+.hdr-in {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px; gap: 14px;
+}
+.logo {
+  display: flex; align-items: center; gap: 12px;
+  line-height: 1; transition: opacity var(--tr);
+}
+.logo:hover { opacity: 0.85; }
+.logo-img {
+  height: 52px; width: auto; display: block; object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+.logo-txt {
+  display: flex; flex-direction: column; line-height: 1;
+  padding-left: 12px; border-left: 1px solid var(--border);
+}
+.logo-n {
+  font-family: var(--ff-h); font-size: 0.95rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--white); margin-bottom: 4px;
+}
+.logo-c { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; color: var(--grey-d); text-transform: uppercase; }
+.ftr .logo-img { height: 68px; }
+.ftr .logo-n { font-size: 1.05rem; }
+
+@media (max-width: 720px) {
+  .logo-img { height: 44px; }
+  .logo-txt { display: none; }
+}
+
+.nav { display: flex; gap: 4px; }
+.nav-a {
+  font-family: var(--ff-h); font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--grey); padding: 7px 13px; border-radius: var(--r);
+  transition: all var(--tr);
+}
+.nav-a:hover { color: var(--yellow); }
+
+.hdr-cta { display: flex; align-items: center; gap: 10px; }
+
+.burger {
+  display: none; flex-direction: column; gap: 5px; padding: 6px;
+}
+.burger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--white); border-radius: 2px; transition: all var(--tr);
+}
+.burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+.mob-nav {
+  display: none; flex-direction: column;
+  background: var(--grafito); border-top: 1px solid var(--border);
+  padding: 14px 22px 22px;
+}
+.mob-nav.open { display: flex; }
+.mob-nav .nav-a { padding: 13px 14px; font-size: 1rem; }
+.mob-nav .btn { margin-top: 10px; width: 100%; }
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  position: relative; overflow: hidden;
+  background: var(--black);
+  min-height: calc(100vh - 68px);
+  display: flex; align-items: center;
+  padding: 50px 0 60px;
+}
+/* Right-side gym interior photo */
+.hero-photo {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 58%; z-index: 0;
+  overflow: hidden;
+  /* Fallback styled background if image is missing */
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255,212,0,0.18) 0%, transparent 35%),
+    radial-gradient(circle at 70% 60%, rgba(255,212,0,0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255,212,0,0.08) 0%, transparent 45%),
+    linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+}
+/* Fake gym pattern: dumbbell silhouettes via repeating gradient */
+.hero-photo::after {
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0, transparent 80px, rgba(255,212,0,0.04) 80px, rgba(255,212,0,0.04) 81px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 80px, rgba(255,212,0,0.04) 80px, rgba(255,212,0,0.04) 81px);
+}
+.hero-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center center;
+  filter: brightness(0.85) contrast(1.08) saturate(1.05);
+}
+/* Diagonal/gradient mask blending photo into black */
+.hero-photo::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg,
+      var(--black) 0%,
+      rgba(5,5,5,0.85) 18%,
+      rgba(5,5,5,0.25) 45%,
+      rgba(5,5,5,0.10) 70%,
+      rgba(5,5,5,0.55) 100%),
+    radial-gradient(ellipse at center, transparent 40%, rgba(5,5,5,0.6) 100%);
+  pointer-events: none;
+}
+/* Yellow accent overlay */
+.hero-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(255,212,0,0.04) 0%, transparent 50%, rgba(255,212,0,0.06) 100%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+/* Grid + yellow glow base */
+.hero-bg {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(90deg, var(--black) 0%, rgba(5,5,5,0.96) 30%, transparent 55%),
+    radial-gradient(ellipse at 15% 70%, rgba(255,212,0,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,212,0,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,212,0,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: linear-gradient(90deg, black 0%, black 40%, transparent 60%);
+  -webkit-mask-image: linear-gradient(90deg, black 0%, black 40%, transparent 60%);
+}
+.hero-side {
+  position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+  background: var(--yellow); z-index: 3;
+}
+/* Yellow vertical line separating text and photo (desktop) */
+.hero-divider {
+  position: absolute; top: 12%; bottom: 12%; left: 46%;
+  width: 1px; background: linear-gradient(to bottom, transparent, var(--yellow) 30%, var(--yellow) 70%, transparent);
+  opacity: 0.4; z-index: 2;
+}
+/* Floating stat badge over photo */
+.hero-stat-card {
+  position: absolute; z-index: 3;
+  right: 4%; bottom: 40px;
+  background: rgba(5,5,5,0.85);
+  border: 1px solid var(--yellow);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 18px 22px;
+  max-width: 280px;
+  display: flex; align-items: center; gap: 14px;
+}
+.hero-stat-card .ico { width: 32px; height: 32px; }
+.hero-stat-txt h5 {
+  font-family: var(--ff-h); font-size: 0.95rem; font-weight: 800;
+  color: var(--white); letter-spacing: 0.04em; text-transform: uppercase;
+  line-height: 1.1; margin-bottom: 3px;
+}
+.hero-stat-txt p {
+  font-size: 0.72rem; color: var(--grey);
+  letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+}
+/* Slogan from real signage */
+.hero-slogan {
+  display: inline-block;
+  font-family: var(--ff-h); font-weight: 900;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--yellow); margin-bottom: 18px;
+  padding-left: 14px; border-left: 3px solid var(--yellow);
+  line-height: 1.1;
+}
+
+.hero-in { position: relative; z-index: 2; max-width: 780px; }
+
+/* Big logo watermark on the right side of hero */
+.hero-logo-mark {
+  position: absolute; z-index: 1;
+  top: 50%; right: 4%; transform: translateY(-50%);
+  width: clamp(220px, 32vw, 440px);
+  opacity: 0.95;
+  filter: drop-shadow(0 8px 30px rgba(0,0,0,0.5));
+  pointer-events: none; user-select: none;
+}
+@media (max-width: 980px) {
+  .hero-logo-mark { display: none; }
+  .hero-photo { width: 50%; }
+  .hero-photo::before {
+    background:
+      linear-gradient(90deg,
+        var(--black) 0%,
+        rgba(5,5,5,0.92) 25%,
+        rgba(5,5,5,0.40) 60%,
+        rgba(5,5,5,0.55) 100%);
+  }
+  .hero-divider { left: 50%; }
+  .hero-stat-card { right: 16px; bottom: 24px; max-width: 220px; padding: 14px 16px; }
+  .hero-stat-card .ico { width: 26px; height: 26px; }
+  .hero-stat-txt h5 { font-size: 0.85rem; }
+}
+@media (max-width: 720px) {
+  .hero-photo {
+    width: 100%; height: 55%;
+    top: auto; bottom: 0; right: 0; left: 0;
+  }
+  .hero-photo::before {
+    background:
+      linear-gradient(180deg,
+        var(--black) 0%,
+        rgba(5,5,5,0.78) 15%,
+        rgba(5,5,5,0.35) 45%,
+        rgba(5,5,5,0.60) 100%);
+  }
+  .hero-divider { display: none; }
+  .hero-stat-card {
+    position: static; margin-top: 32px; max-width: 100%;
+    width: fit-content;
+  }
+}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--ff-h); font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 6px 13px; border: 1.5px solid var(--yellow);
+  color: var(--yellow); border-radius: 2px;
+  margin-bottom: 24px;
+}
+.hero-tag::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--yellow); border-radius: 50%;
+  animation: blink 1.6s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.35;} }
+
+.hero h1 {
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.hero h1 .y { color: var(--yellow); }
+.hero h1 .stroke { -webkit-text-stroke: 2px var(--white); color: transparent; }
+
+.hero-sub {
+  font-size: clamp(0.95rem, 1.6vw, 1.08rem);
+  color: var(--grey); max-width: 530px;
+  margin-bottom: 32px; line-height: 1.7;
+}
+
+.hero-btns { display: flex; flex-wrap: wrap; gap: 11px; margin-bottom: 36px; }
+
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+  max-width: 640px;
+}
+.hero-meta-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 4px 22px 4px 0;
+  border-right: 1px solid var(--border);
+}
+.hero-meta-item:last-child { border-right: none; }
+.hero-meta-item + .hero-meta-item { padding-left: 22px; }
+.hero-meta-ico {
+  width: 18px; height: 18px; color: var(--yellow); flex-shrink: 0;
+}
+.hero-meta-txt {
+  font-family: var(--ff-h); font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--white);
+  line-height: 1.2;
+}
+.hero-meta-sub {
+  font-size: 0.68rem; color: var(--grey-d);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  font-weight: 600; margin-top: 2px;
+}
+
+/* ============================================================
+   VALUE
+============================================================ */
+.value { background: var(--grafito); }
+.value-head { max-width: 720px; margin-bottom: 50px; }
+.value-head h2 { margin-bottom: 16px; color: var(--white); }
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.value-card {
+  background: var(--grafito); padding: 36px 28px;
+  transition: background var(--tr);
+  position: relative;
+}
+.value-card:hover { background: var(--grafito2); }
+.value-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: var(--yellow);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.value-card:hover::after { transform: scaleX(1); }
+.value-card .ico { margin-bottom: 18px; }
+.value-card h3 { color: var(--white); margin-bottom: 10px; }
+.value-card p { font-size: 0.88rem; color: var(--grey); line-height: 1.65; }
+
+/* ============================================================
+   SERVICES
+============================================================ */
+.serv { background: var(--black); }
+.serv-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 44px; flex-wrap: wrap; }
+.serv-head h2 { color: var(--white); }
+
+.serv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.serv-card {
+  background: var(--grafito);
+  padding: 30px 26px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: all var(--tr);
+  position: relative; overflow: hidden;
+}
+.serv-card:hover { background: var(--grafito2); }
+.serv-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%; background: var(--yellow);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 0.3s ease;
+}
+.serv-card:hover::before { transform: scaleY(1); }
+
+.serv-head-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.serv-card .ico { width: 26px; height: 26px; }
+.serv-num {
+  font-family: var(--ff-h); font-size: 0.75rem; font-weight: 700;
+  color: var(--grey-d); letter-spacing: 0.1em;
+}
+.serv-card h3 { color: var(--white); font-size: 1.25rem; }
+.serv-card p { font-size: 0.85rem; color: var(--grey); line-height: 1.6; }
+.serv-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--ff-h); font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--yellow); margin-top: auto;
+  transition: gap var(--tr);
+}
+.serv-card:hover .serv-link { gap: 10px; }
+
+/* ============================================================
+   BEGINNERS
+============================================================ */
+.begin { background: var(--grafito); }
+.begin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px; align-items: center;
+}
+.begin-text h2 { color: var(--white); margin-bottom: 16px; }
+.begin-text p { margin-bottom: 28px; }
+.begin-rows { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.begin-row {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  background: var(--grafito);
+  transition: background var(--tr);
+}
+.begin-row:hover { background: var(--grafito2); }
+.begin-q, .begin-a {
+  padding: 18px 22px;
+  font-family: var(--ff-h); font-weight: 700;
+  letter-spacing: 0.03em; text-transform: uppercase;
+  font-size: 0.92rem; display: flex; align-items: center;
+}
+.begin-q { color: var(--grey); border-right: 1px solid var(--border); }
+.begin-a { color: var(--white); gap: 10px; }
+.begin-a-arrow {
+  width: 16px; height: 16px; color: var(--yellow); flex-shrink: 0;
+}
+
+/* ============================================================
+   PLACE (horarios + ubicación combinado)
+============================================================ */
+.place { background: var(--black); }
+.place-head { margin-bottom: 48px; max-width: 720px; }
+.place-head h2 { color: var(--white); margin-bottom: 14px; }
+
+.place-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 36px; align-items: stretch;
+}
+
+.place-info {
+  background: var(--grafito);
+  border: 1px solid var(--border);
+  padding: 36px 30px;
+  display: flex; flex-direction: column;
+}
+
+.place-block h4 {
+  font-family: var(--ff-h); font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--yellow); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.place-block h4::before { content: ''; width: 16px; height: 2px; background: var(--yellow); }
+
+.sched-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+.sched-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; background: var(--grafito2);
+  border-left: 2px solid var(--yellow);
+}
+.sched-day {
+  font-family: var(--ff-h); font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey);
+}
+.sched-hr {
+  font-family: var(--ff-h); font-size: 1.1rem; font-weight: 900;
+  color: var(--white); letter-spacing: 0.02em;
+}
+
+.place-addr {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 16px 0; border-top: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.place-addr .ico { width: 20px; height: 20px; margin-top: 2px; }
+.place-addr-txt { font-size: 0.92rem; color: var(--white); font-weight: 500; }
+.place-addr-sub { font-size: 0.78rem; color: var(--grey-d); margin-top: 2px; }
+
+.place-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
+.place-btns .btn { flex: 1; min-width: 140px; }
+
+.place-map {
+  border: 1px solid var(--border);
+  overflow: hidden;
+  min-height: 380px;
+  position: relative;
+}
+.place-map iframe {
+  width: 100%; height: 100%;
+  min-height: 380px;
+  border: none;
+  filter: invert(0.92) hue-rotate(180deg) saturate(0.5);
+}
+
+/* ============================================================
+   SOCIAL PROOF (alternative)
+============================================================ */
+.proof { background: var(--grafito); }
+.proof-head { text-align: center; margin-bottom: 44px; max-width: 580px; margin-left: auto; margin-right: auto; }
+.proof-head h2 { color: var(--white); margin-bottom: 14px; }
+
+.proof-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border); border: 1px solid var(--border);
+}
+.proof-item {
+  background: var(--grafito); padding: 28px 22px; text-align: center;
+  transition: background var(--tr);
+}
+.proof-item:hover { background: var(--grafito2); }
+.proof-item .ico { margin: 0 auto 14px; }
+.proof-item h4 {
+  font-family: var(--ff-h); font-size: 1rem; font-weight: 800;
+  text-transform: uppercase; color: var(--white);
+  letter-spacing: 0.04em; margin-bottom: 6px;
+}
+.proof-item p { font-size: 0.78rem; color: var(--grey); line-height: 1.55; }
+
+.proof-note {
+  margin-top: 30px; padding: 22px 28px;
+  background: var(--grafito2); border: 1px dashed var(--border);
+  text-align: center;
+}
+.proof-note p {
+  font-family: var(--ff-h); font-size: 0.88rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey);
+}
+
+/* ============================================================
+   FAQ
+============================================================ */
+.faq { background: var(--black); }
+.faq-head { text-align: center; margin-bottom: 44px; }
+.faq-head h2 { color: var(--white); }
+
+.faq-list { max-width: 740px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 22px 4px; text-align: left;
+  font-family: var(--ff-h); font-size: 1.05rem; font-weight: 800;
+  letter-spacing: 0.02em; text-transform: uppercase;
+  color: var(--grey); transition: color var(--tr);
+}
+.faq-q:hover { color: var(--white); }
+.faq-item.open .faq-q { color: var(--yellow); }
+.faq-plus {
+  width: 24px; height: 24px; border: 1.5px solid var(--border);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: var(--yellow); transition: all var(--tr);
+  font-size: 1.1rem; line-height: 1; font-weight: 400;
+}
+.faq-item.open .faq-plus {
+  background: var(--yellow); color: var(--black); border-color: var(--yellow);
+  transform: rotate(45deg);
+}
+.faq-ans { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-item.open .faq-ans { max-height: 220px; }
+.faq-ans p { padding: 0 4px 22px; font-size: 0.9rem; color: var(--grey); line-height: 1.75; }
+
+/* ============================================================
+   CTA FINAL
+============================================================ */
+.cta {
+  background: var(--yellow); color: var(--black);
+  padding: 90px 0; position: relative; overflow: hidden;
+}
+.cta::before {
+  content: 'WORLDFIT';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: var(--ff-h); font-weight: 900;
+  font-size: clamp(7rem, 22vw, 18rem);
+  color: rgba(0,0,0,0.06); white-space: nowrap;
+  pointer-events: none; user-select: none; line-height: 1;
+  letter-spacing: -0.02em;
+}
+.cta-in { position: relative; z-index: 1; text-align: center; max-width: 640px; margin: 0 auto; }
+.cta-eyebrow {
+  display: inline-block;
+  font-family: var(--ff-h); font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--black); margin-bottom: 18px;
+  padding: 5px 12px; border: 1.5px solid var(--black);
+}
+.cta h2 { color: var(--black); margin-bottom: 18px; }
+.cta p { font-size: 1rem; color: rgba(0,0,0,0.72); margin-bottom: 32px; line-height: 1.7; max-width: 460px; margin-left: auto; margin-right: auto; }
+.cta-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.ftr { background: var(--black); border-top: 1px solid var(--border); padding: 56px 0 20px; }
+.ftr-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 44px;
+}
+.ftr-brand p { font-size: 0.83rem; color: var(--grey); max-width: 230px; margin-top: 12px; line-height: 1.7; }
+.ftr-soc { display: flex; gap: 8px; margin-top: 18px; }
+.soc-a {
+  width: 36px; height: 36px; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--grey); transition: all var(--tr);
+}
+.soc-a:hover { border-color: var(--yellow); color: var(--yellow); background: rgba(255,212,0,0.06); }
+.soc-a svg { width: 15px; height: 15px; }
+
+.ftr-col h5 {
+  font-family: var(--ff-h); font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--yellow); margin-bottom: 18px;
+}
+.ftr-links { display: flex; flex-direction: column; gap: 10px; }
+.ftr-links a, .ftr-links p { font-size: 0.83rem; color: var(--grey); transition: color var(--tr); }
+.ftr-links a:hover { color: var(--white); }
+
+.ftr-bot {
+  border-top: 1px solid var(--border); padding-top: 22px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+  font-family: var(--ff-h); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--grey-d);
+}
+
+/* ============================================================
+   FLOATING + STICKY
+============================================================ */
+.wa-float {
+  position: fixed; bottom: 26px; right: 26px; z-index: 800;
+}
+.wa-float a {
+  width: 56px; height: 56px;
+  background: var(--wa); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 22px rgba(37,211,102,0.4);
+  transition: all var(--tr);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+.wa-float a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(37,211,102,0.55);
+  animation: none;
+}
+.wa-float svg { width: 26px; height: 26px; fill: #fff; }
+@keyframes pulse { 0%,100%{box-shadow:0 6px 22px rgba(37,211,102,0.4);} 50%{box-shadow:0 6px 32px rgba(37,211,102,0.65);} }
+
+.mob-sticky {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 800;
+  background: var(--black);
+  border-top: 2px solid var(--yellow);
+  padding: 10px 14px env(safe-area-inset-bottom);
+}
+.mob-sticky .btn { width: 100%; padding: 14px; font-size: 0.95rem; }
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 980px) {
+  .value-grid, .serv-grid { grid-template-columns: repeat(2, 1fr); }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); }
+  .begin-grid { grid-template-columns: 1fr; gap: 36px; }
+  .place-grid { grid-template-columns: 1fr; gap: 24px; }
+  .place-map { min-height: 320px; }
+  .place-map iframe { min-height: 320px; }
+  .ftr-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 720px) {
+  .sec { padding: 60px 0; }
+  .nav { display: none; }
+  .burger { display: flex; }
+  .hdr-cta .btn:not(:last-child) { display: none; }
+
+  .hero { min-height: auto; padding: 50px 0 56px; }
+  .hero h1 { font-size: clamp(2.4rem, 11vw, 3.6rem); }
+  .hero-meta { padding-top: 18px; gap: 14px 0; }
+  .hero-meta-item {
+    flex: 1 1 100%; padding: 8px 0; border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-meta-item + .hero-meta-item { padding-left: 0; }
+  .hero-meta-item:last-child { border-bottom: none; }
+
+  .value-grid, .serv-grid, .proof-grid { grid-template-columns: 1fr; }
+
+  .begin-row { grid-template-columns: 1fr; }
+  .begin-q { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+  .begin-a { padding-top: 12px; }
+
+  .sched-row { padding: 14px 16px; }
+  .place-info { padding: 28px 22px; }
+
+  .ftr-grid { grid-template-columns: 1fr; gap: 28px; }
+  .ftr-bot { flex-direction: column; text-align: center; }
+
+  .cta { padding: 70px 0; }
+  .cta-btns { flex-direction: column; align-items: stretch; padding: 0 8px; }
+  .cta-btns .btn { width: 100%; }
+
+  .wa-float { display: none; }
+  .mob-sticky { display: block; }
+  body { padding-bottom: 76px; }
+}
+
+@media (max-width: 420px) {
+  .wrap { padding: 0 18px; }
+  .hero-btns { flex-direction: column; align-items: stretch; }
+  .hero-btns .btn { width: 100%; }
+  .serv-card { padding: 26px 22px; }
+  .place-btns { flex-direction: column; }
+  .place-btns .btn { width: 100%; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     SVG ICON LIBRARY (sprite, hidden)
+============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.5 6.5l11 11"/><path d="M21 21l-1-1"/><path d="M3 3l1 1"/>
+      <path d="M18 22l4-4"/><path d="M2 6l4-4"/>
+      <path d="M3 10l7-7"/><path d="M14 21l7-7"/>
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+    </symbol>
+    <symbol id="i-bike" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/>
+      <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    </symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+    </symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+    </symbol>
+    <symbol id="i-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+      <polyline points="17 6 23 6 23 12"/>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+    </symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+      <line x1="7" y1="7" x2="7.01" y2="7"/>
+    </symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <div class="hdr-in">
+      <a href="#inicio" class="logo" aria-label="WorldFit Algarrobo">
+        <img src="/images/worldfit-logo.png" alt="WorldFit Chile" class="logo-img" onerror="this.style.display='none'">
+        <span class="logo-txt">
+          <span class="logo-n">Algarrobo</span>
+          <span class="logo-c">Valparaíso · Chile</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#inicio"    class="nav-a">Inicio</a>
+        <a href="#servicios" class="nav-a">Entrenamientos</a>
+        <a href="#empezar"   class="nav-a">Empezar</a>
+        <a href="#ubicacion" class="nav-a">Horarios</a>
+        <a href="#faq"       class="nav-a">FAQ</a>
+      </nav>
+      <div class="hdr-cta">
+        <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+           target="_blank" rel="noopener" class="btn btn-yellow btn-sm">
+          <svg width="14" height="14"><use href="#i-wa"/></svg>
+          WhatsApp
+        </a>
+        <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav class="mob-nav" id="mobNav">
+    <a href="#inicio"    class="nav-a" onclick="closeNav()">Inicio</a>
+    <a href="#servicios" class="nav-a" onclick="closeNav()">Entrenamientos</a>
+    <a href="#empezar"   class="nav-a" onclick="closeNav()">Empezar</a>
+    <a href="#ubicacion" class="nav-a" onclick="closeNav()">Horarios y ubicación</a>
+    <a href="#faq"       class="nav-a" onclick="closeNav()">Preguntas frecuentes</a>
+    <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+       target="_blank" rel="noopener" class="btn btn-yellow" onclick="closeNav()">
+      <svg width="16" height="16"><use href="#i-wa"/></svg>
+      Consultar por WhatsApp
+    </a>
+  </nav>
+</header>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="inicio">
+  <div class="hero-photo">
+    <img src="/images/worldfit-gym.jpg" alt="Interior del gimnasio WorldFit Algarrobo" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-bg"></div>
+  <div class="hero-divider" aria-hidden="true"></div>
+  <div class="hero-side"></div>
+  <div class="hero-stat-card" aria-hidden="true">
+    <svg class="ico"><use href="#i-bolt"/></svg>
+    <div class="hero-stat-txt">
+      <h5>Prohibido rendirse</h5>
+      <p>Comunidad WorldFit</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="hero-tag rv">Gimnasio · Algarrobo · Valparaíso</span>
+      <span class="hero-slogan rv">Prohibido rendirse</span>
+      <h1 class="h-1 rv d1">
+        Entrena <span class="y">fuerte</span><br>
+        en Algarrobo
+      </h1>
+      <p class="hero-sub rv d2">
+        Fuerza, funcional, clases y entrenamiento guiado en una comunidad que te empuja a avanzar.
+      </p>
+      <div class="hero-btns rv d2">
+        <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+           target="_blank" rel="noopener" class="btn btn-yellow btn-xl">
+          <svg><use href="#i-wa"/></svg>
+          Consultar por WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Los+Pel%C3%ADcanos+2449%2C+Algarrobo%2C+Valpara%C3%ADso%2C+Chile"
+           target="_blank" rel="noopener" class="btn btn-ghost btn-xl">
+          <svg><use href="#i-pin"/></svg>
+          Ver ubicación
+        </a>
+      </div>
+      <div class="hero-meta rv d3">
+        <div class="hero-meta-item">
+          <svg class="hero-meta-ico"><use href="#i-pin"/></svg>
+          <div>
+            <div class="hero-meta-txt">Los Pelícanos 2449</div>
+            <div class="hero-meta-sub">Algarrobo</div>
+          </div>
+        </div>
+        <div class="hero-meta-item">
+          <svg class="hero-meta-ico"><use href="#i-clock"/></svg>
+          <div>
+            <div class="hero-meta-txt">Lun – Vie · 5:00–22:00</div>
+            <div class="hero-meta-sub">Horario extendido</div>
+          </div>
+        </div>
+        <div class="hero-meta-item">
+          <svg class="hero-meta-ico"><use href="#i-dumbbell"/></svg>
+          <div>
+            <div class="hero-meta-txt">Fuerza · Funcional · Clases</div>
+            <div class="hero-meta-sub">Para todos los niveles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VALUE
+============================================================ -->
+<section class="value sec">
+  <div class="wrap">
+    <div class="value-head rv">
+      <span class="eyebrow">El concepto</span>
+      <h2 class="h-2">No solo máquinas.<br><span class="yellow">Método, comunidad y disciplina.</span></h2>
+      <p class="lead" style="margin-top:14px;max-width:620px">WorldFit reúne fuerza, funcional, clases grupales y acompañamiento para que puedas empezar desde tu nivel y avanzar con estructura.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card rv d1">
+        <svg class="ico ico-lg"><use href="#i-compass"/></svg>
+        <h3 class="h-3">Entrenamiento guiado</h3>
+        <p>Cada sesión con propósito, estructura y orientación profesional desde el día uno.</p>
+      </div>
+      <div class="value-card rv d2">
+        <svg class="ico ico-lg"><use href="#i-users"/></svg>
+        <h3 class="h-3">Comunidad local</h3>
+        <p>Un ambiente real en Algarrobo donde la energía del grupo te hace volver mañana.</p>
+      </div>
+      <div class="value-card rv d3">
+        <svg class="ico ico-lg"><use href="#i-trending"/></svg>
+        <h3 class="h-3">Progreso real</h3>
+        <p>Corrección técnica y seguimiento para que cada semana avances con más confianza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section class="serv sec" id="servicios">
+  <div class="wrap">
+    <div class="serv-head rv">
+      <div>
+        <span class="eyebrow">Entrenamientos</span>
+        <h2 class="h-2">Entrena como<br>más te <span class="yellow">acomode</span></h2>
+      </div>
+      <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+         target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+        Ver planes y disponibilidad
+        <svg width="14" height="14"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card rv d1">
+        <div class="serv-head-row">
+          <svg class="ico"><use href="#i-dumbbell"/></svg>
+          <span class="serv-num">01</span>
+        </div>
+        <h3 class="h-3">Fuerza</h3>
+        <p>Pesas libres y máquinas con progresión real para construir base sólida.</p>
+        <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+           target="_blank" rel="noopener" class="serv-link">
+          Consultar <svg width="12" height="12"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+      <div class="serv-card rv d1">
+        <div class="serv-head-row">
+          <svg class="ico"><use href="#i-bolt"/></svg>
+          <span class="serv-num">02</span>
+        </div>
+        <h3 class="h-3">Funcional</h3>
+        <p>Movimientos completos, dinámicos y útiles para mejorar tu capacidad física.</p>
+        <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+           target="_blank" rel="noopener" class="serv-link">
+          Consultar <svg width="12" height="12"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+      <div class="serv-card rv d2">
+        <div class="serv-head-row">
+          <svg class="ico"><use href="#i-bike"/></svg>
+          <span class="serv-num">03</span>
+        </div>
+        <h3 class="h-3">Spinning</h3>
+        <p>Ciclismo indoor con música, energía e intensidad. Cardio en grupo.</p>
+        <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+           target="_blank" rel="noopener" class="serv-link">
+          Consultar <svg width="12" height="12"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+      <div class="serv-card rv d2">
+        <div class="serv-head-row">
+          <svg class="ico"><use href="#i-users"/></svg>
+          <span class="serv-num">04</span>
+        </div>
+        <h3 class="h-3">Clases grupales</h3>
+        <p>Sesiones en grupo con estructura, motivación y un ambiente que te empuja.</p>
+        <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+           target="_blank" rel="noopener" class="serv-link">
+          Consultar <svg width="12" height="12"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+      <div class="serv-card rv d3">
+        <div class="serv-head-row">
+          <svg class="ico"><use href="#i-target"/></svg>
+          <span class="serv-num">05</span>
+        </div>
+        <h3 class="h-3">Personalizado</h3>
+        <p>Un profesional enfocado 100% en tu objetivo, nivel y progreso real.</p>
+        <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+           target="_blank" rel="noopener" class="serv-link">
+          Consultar <svg width="12" height="12"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+      <div class="serv-card rv d3">
+        <div class="serv-head-row">
+          <svg class="ico"><use href="#i-heart"/></svg>
+          <span class="serv-num">06</span>
+        </div>
+        <h3 class="h-3">Acondicionamiento</h3>
+        <p>Mejora tu condición general con un plan adaptado a tu punto de partida.</p>
+        <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+           target="_blank" rel="noopener" class="serv-link">
+          Consultar <svg width="12" height="12"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BEGINNERS
+============================================================ -->
+<section class="begin sec" id="empezar">
+  <div class="wrap">
+    <div class="begin-grid">
+      <div class="begin-text rv">
+        <span class="eyebrow">Para principiantes</span>
+        <h2 class="h-2">¿No sabes por dónde empezar?<br><span class="yellow">Aquí partes con guía.</span></h2>
+        <p class="lead">Muchas personas llegan sin saber qué rutina hacer o cómo mantenerse constantes. En WorldFit empiezas desde tu nivel, con orientación clara y un camino estructurado.</p>
+        <div style="margin-top:28px">
+          <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+             target="_blank" rel="noopener" class="btn btn-yellow">
+            <svg><use href="#i-wa"/></svg>
+            Quiero empezar
+          </a>
+        </div>
+      </div>
+      <div class="begin-rows rv d2">
+        <div class="begin-row">
+          <div class="begin-q">No sé qué rutina hacer</div>
+          <div class="begin-a">
+            <svg class="begin-a-arrow"><use href="#i-arrow-right"/></svg>
+            Te orientamos según tu objetivo
+          </div>
+        </div>
+        <div class="begin-row">
+          <div class="begin-q">Me cuesta ser constante</div>
+          <div class="begin-a">
+            <svg class="begin-a-arrow"><use href="#i-arrow-right"/></svg>
+            Entrenas en un ambiente motivador
+          </div>
+        </div>
+        <div class="begin-row">
+          <div class="begin-q">Quiero bajar grasa o ganar fuerza</div>
+          <div class="begin-a">
+            <svg class="begin-a-arrow"><use href="#i-arrow-right"/></svg>
+            Avanzas con estructura y técnica
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PLACE (horarios + ubicación combinado)
+============================================================ -->
+<section class="place sec" id="ubicacion">
+  <div class="wrap">
+    <div class="place-head rv">
+      <span class="eyebrow">Horarios y ubicación</span>
+      <h2 class="h-2">Entrena en Algarrobo<br>con <span class="yellow">horarios amplios</span></h2>
+    </div>
+    <div class="place-grid">
+      <div class="place-info rv">
+        <div class="place-block">
+          <h4>Horarios</h4>
+          <div class="sched-list">
+            <div class="sched-row">
+              <span class="sched-day">Lunes a Viernes</span>
+              <span class="sched-hr">5:00 — 22:00</span>
+            </div>
+            <div class="sched-row">
+              <span class="sched-day">Sábado</span>
+              <span class="sched-hr">10:00 — 19:00</span>
+            </div>
+            <div class="sched-row">
+              <span class="sched-day">Domingo</span>
+              <span class="sched-hr">10:00 — 14:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-addr">
+          <svg class="ico"><use href="#i-pin"/></svg>
+          <div>
+            <div class="place-addr-txt">Los Pelícanos 2449</div>
+            <div class="place-addr-sub">Algarrobo · Valparaíso · Chile</div>
+          </div>
+        </div>
+
+        <div class="place-btns">
+          <a href="https://www.google.com/maps/search/?api=1&query=Los+Pel%C3%ADcanos+2449%2C+Algarrobo%2C+Valpara%C3%ADso%2C+Chile"
+             target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg width="15" height="15"><use href="#i-pin"/></svg>
+            Cómo llegar
+          </a>
+          <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+             target="_blank" rel="noopener" class="btn btn-yellow">
+            <svg width="15" height="15"><use href="#i-wa"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="place-map rv d2">
+        <iframe
+          src="https://maps.google.com/maps?q=Los+Pelicanos+2449,+Algarrobo,+Valparaiso,+Chile&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación WorldFit Algarrobo">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOCIAL PROOF (alternative: lo que vas a encontrar)
+============================================================ -->
+<section class="proof sec">
+  <div class="wrap">
+    <div class="proof-head rv">
+      <span class="eyebrow" style="display:inline-flex">Lo que vas a encontrar</span>
+      <h2 class="h-2">Más que <span class="yellow">un gimnasio</span></h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-item rv d1">
+        <svg class="ico ico-lg"><use href="#i-spark"/></svg>
+        <h4>Ambiente motivador</h4>
+        <p>Energía real que te hace querer volver mañana.</p>
+      </div>
+      <div class="proof-item rv d1">
+        <svg class="ico ico-lg"><use href="#i-trending"/></svg>
+        <h4>Para todos los niveles</h4>
+        <p>Principiantes, intermedios y avanzados.</p>
+      </div>
+      <div class="proof-item rv d2">
+        <svg class="ico ico-lg"><use href="#i-target"/></svg>
+        <h4>Profesionales que orientan</h4>
+        <p>Acompañamiento y corrección técnica real.</p>
+      </div>
+      <div class="proof-item rv d2">
+        <svg class="ico ico-lg"><use href="#i-users"/></svg>
+        <h4>Comunidad activa</h4>
+        <p>Personas reales entrenando con propósito.</p>
+      </div>
+    </div>
+    <div class="proof-note rv">
+      <p>Espacio reservado para testimonios reales de alumnos WorldFit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section class="faq sec" id="faq">
+  <div class="wrap">
+    <div class="faq-head rv">
+      <span class="eyebrow" style="display:inline-flex">Preguntas frecuentes</span>
+      <h2 class="h-2">Resolvemos tus <span class="yellow">dudas</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)" aria-expanded="false">
+          ¿Puedo empezar si nunca he entrenado?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-ans"><p>Sí. WorldFit está pensado para distintos niveles. Llega sin experiencia y recibirás orientación desde el primer día: cómo usar el espacio, qué rutina hacer y cómo progresar de forma segura.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)" aria-expanded="false">
+          ¿Tienen entrenamiento personalizado?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-ans"><p>Sí. Consulta por WhatsApp para conocer disponibilidad. Un profesional diseña tu plan, corrige tu técnica y hace seguimiento sesión a sesión.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)" aria-expanded="false">
+          ¿Dónde están ubicados?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-ans"><p>En Los Pelícanos 2449, Algarrobo, Valparaíso. Ve la ubicación exacta con el botón "Cómo llegar" en la sección de horarios y ubicación.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)" aria-expanded="false">
+          ¿Cuál es el horario?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-ans"><p>Lunes a viernes de 5:00 a 22:00, sábado de 10:00 a 19:00 y domingo de 10:00 a 14:00.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)" aria-expanded="false">
+          ¿Cómo consulto valores o planes?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-ans"><p>Usa cualquier botón de WhatsApp en esta página. Te responderemos directamente con la información actualizada de planes, precios y disponibilidad.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA FINAL
+============================================================ -->
+<section class="cta">
+  <div class="wrap cta-in">
+    <span class="cta-eyebrow rv">Empieza hoy</span>
+    <h2 class="h-1 rv d1">Empieza hoy.<br>Entrena con propósito.</h2>
+    <p class="rv d2">Escríbenos por WhatsApp y consulta por planes, horarios y disponibilidad.</p>
+    <div class="cta-btns rv d2">
+      <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+         target="_blank" rel="noopener" class="btn btn-dark btn-xl">
+        <svg><use href="#i-wa"/></svg>
+        Consultar por WhatsApp
+      </a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Los+Pel%C3%ADcanos+2449%2C+Algarrobo%2C+Valpara%C3%ADso%2C+Chile"
+         target="_blank" rel="noopener" class="btn btn-dark btn-xl" style="background:transparent;color:var(--black);border-color:var(--black)">
+        <svg><use href="#i-pin"/></svg>
+        Ver ubicación
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div class="ftr-brand">
+        <a href="#inicio" class="logo" aria-label="WorldFit Algarrobo">
+          <img src="/images/worldfit-logo.png" alt="WorldFit Chile" class="logo-img" onerror="this.style.display='none'">
+          <span class="logo-txt">
+            <span class="logo-n"><em>World</em>Fit</span>
+            <span class="logo-c">Algarrobo · Valparaíso</span>
+          </span>
+        </a>
+        <p>Gimnasio y centro de entrenamiento en Algarrobo. Fuerza, funcional, clases y asesoría para todos los niveles.</p>
+        <div class="ftr-soc">
+          <a href="https://instagram.com/worldfit.algarrobo" target="_blank" rel="noopener" class="soc-a" aria-label="Instagram WorldFit Algarrobo">
+            <svg><use href="#i-ig"/></svg>
+          </a>
+          <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar" target="_blank" rel="noopener" class="soc-a" aria-label="WhatsApp WorldFit Algarrobo">
+            <svg><use href="#i-wa"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="ftr-col">
+        <h5>Navegación</h5>
+        <div class="ftr-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Entrenamientos</a>
+          <a href="#empezar">Empezar</a>
+          <a href="#ubicacion">Horarios y ubicación</a>
+          <a href="#faq">Preguntas frecuentes</a>
+        </div>
+      </div>
+      <div class="ftr-col">
+        <h5>Horarios</h5>
+        <div class="ftr-links">
+          <p style="color:var(--white);font-weight:600">Lun – Vie</p>
+          <p>5:00 – 22:00</p>
+          <p style="color:var(--white);font-weight:600;margin-top:6px">Sábado</p>
+          <p>10:00 – 19:00</p>
+          <p style="color:var(--white);font-weight:600;margin-top:6px">Domingo</p>
+          <p>10:00 – 14:00</p>
+        </div>
+      </div>
+      <div class="ftr-col">
+        <h5>Contacto</h5>
+        <div class="ftr-links">
+          <p>Los Pelícanos 2449</p>
+          <p>Algarrobo, Valparaíso</p>
+          <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar" target="_blank" rel="noopener" style="margin-top:8px">+56 9 9454 5650</a>
+          <a href="https://instagram.com/worldfit.algarrobo" target="_blank" rel="noopener">@worldfit.algarrobo</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Los+Pel%C3%ADcanos+2449%2C+Algarrobo%2C+Valpara%C3%ADso%2C+Chile" target="_blank" rel="noopener" style="margin-top:6px">Ver en Google Maps →</a>
+        </div>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2025 WorldFit Algarrobo</span>
+      <span>Los Pelícanos 2449 · Algarrobo · Chile</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING WA (desktop)
+============================================================ -->
+<div class="wa-float">
+  <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+     target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+    <svg><use href="#i-wa"/></svg>
+  </a>
+</div>
+
+<!-- ============================================================
+     MOBILE STICKY
+============================================================ -->
+<div class="mob-sticky">
+  <a href="https://wa.me/56994545650?text=Hola%20WorldFit%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20informaci%C3%B3n%20para%20empezar%20a%20entrenar"
+     target="_blank" rel="noopener" class="btn btn-yellow">
+    <svg><use href="#i-wa"/></svg>
+    Consultar por WhatsApp
+  </a>
+</div>
+
+<script>
+// Header scroll
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Burger
+const burger = document.getElementById('burger');
+const mobNav = document.getElementById('mobNav');
+burger.addEventListener('click', () => {
+  const open = mobNav.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', String(open));
+});
+function closeNav() {
+  mobNav.classList.remove('open');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', (e) => {
+  if (!hdr.contains(e.target)) closeNav();
+});
+
+// FAQ
+function faqToggle(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+  });
+  if (!wasOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// Reveal
+const rvs = document.querySelectorAll('.rv');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+rvs.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
